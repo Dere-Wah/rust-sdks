@@ -78,14 +78,8 @@ NvidiaVideoDecoderFactory::NvidiaVideoDecoderFactory()
 NvidiaVideoDecoderFactory::~NvidiaVideoDecoderFactory() {}
 
 bool NvidiaVideoDecoderFactory::IsSupported() {
-  // Check if the CUDA context can be initialized.
-  auto cu_context = std::make_unique<livekit::CudaContext>();
-  if (!cu_context->Initialize()) {
-    std::cout << "Failed to initialize CUDA context." << std::endl;
-    return false;
-  }
-  std::cout << "Nvidia Decoder is supported." << std::endl;
-  return true;
+  std::cout << "Nvidia Encoder is disabled by default." << std::endl;
+  return false;
 }
 
 std::unique_ptr<VideoDecoder> NvidiaVideoDecoderFactory::Create(
